@@ -1,0 +1,5 @@
+services:
+  app:
+    ports:
+      - 8080:8080
+    command: nodos server -h 0.0.0.0
