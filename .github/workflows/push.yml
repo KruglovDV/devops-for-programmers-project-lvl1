@@ -13,4 +13,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test
       run: ls node_modules
+    - name: Test 2
       run: make test
