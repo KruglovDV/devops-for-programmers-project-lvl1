@@ -9,6 +9,4 @@ RUN npm install
 
 COPY . .
 
-RUN ["ls", "-lah"]
-
 CMD ["npm", "start"]
