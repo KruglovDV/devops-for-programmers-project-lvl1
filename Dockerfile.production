@@ -9,6 +9,4 @@ RUN npm install
 
 COPY . .
 
-RUN echo $NODE_ENV
-
 CMD ["npm", "start"]
