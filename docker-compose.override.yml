@@ -6,3 +6,14 @@ services:
     ports:
       - 8080:8080
     command: npm start
+  
+  caddy:
+    image: caddy
+    depends_on:
+      - app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
