@@ -1,9 +1,13 @@
+---
+
 pipelines:
   browser:
     - setLocale
     - protectFromForgery
 
 scopes:
-  - name: '/'
+  - name: /
     pipeline: browser
     root: true
+    routes:
+      - resources: users
