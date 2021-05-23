@@ -4,6 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
+    depends_on:
+      - db
     command: npm test
     volumes:
       - .:/app
+  
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
