@@ -6,7 +6,9 @@ services:
     ports:
       - 8080:8080
     command: npm start
-  
+    volumes:
+      - .:/app
+
   caddy:
     container_name: devops_caddy_webserver
     image: caddy
@@ -17,4 +19,4 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
